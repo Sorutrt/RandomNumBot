@@ -7,3 +7,9 @@
 
 乱数の範囲の設定
 `/range {最小値} {最大値}`
+
+## For Developer(me)
+.env file
+```
+TOKEN = "ここにトークンを入力"
+```
