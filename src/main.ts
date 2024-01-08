@@ -12,12 +12,16 @@ export const client = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
     ],
-    partials: [partials.Message, Partials.Channel],
+    partials: [Partials.Message, Partials.Channel],
 });
 
-// botの起動確認
-const bootcheck = require("./bootcheck");
-console.log(bootcheck());
+// Botの起動確認
+client.once("ready", () => {
+    console.log("Ready!");
+    if (client.user) {
+        module.exports = client.user.tag;
+    }
+});
 
 // !timeと入力したときに現在時刻を返す
 client.on('messageCreate', async (message: Message) => {
