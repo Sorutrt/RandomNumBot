@@ -34,5 +34,7 @@ client.on('messageCreate', async (message: Message) => {
 });
 */
 
+const rand: Promise = require('./rand');
+
 // Bot作成時のトークンでDiscordと接続
 client.login(process.env.TOKEN);
