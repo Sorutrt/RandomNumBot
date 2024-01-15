@@ -1,5 +1,7 @@
-import { GatewayIntentBits, Client, Partials, Message, SlashCommandBuilder } from "discord.js";
+import { GatewayIntentBits, Client, Partials, Collection, CommandInteraction } from "discord.js";
 import dotenv from "dotenv";
+import { execute } from './commands/rand'
+
 
 dotenv.config(); //.envファイルを読み込む
 
@@ -34,7 +36,16 @@ client.on('messageCreate', async (message: Message) => {
 });
 */
 
-const rand: Promise = require('./rand');
+client.on('randnumber', async (interaction: CommandInteraction) => {
+    if (!interaction.isCommand()) {
+        return;
+    }
+    const { commandName } = interaction;
+
+    if (commandName === 'rand') {
+        await execute(interaction);
+    }
+})
 
 // Bot作成時のトークンでDiscordと接続
 client.login(process.env.TOKEN);
