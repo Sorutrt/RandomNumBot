@@ -1,4 +1,4 @@
-import { GatewayIntentBits, Client, Partials, Collection, CommandInteraction } from "discord.js";
+import { GatewayIntentBits, Client, Partials, CommandInteraction, Message } from "discord.js";
 import dotenv from "dotenv";
 import { execute } from './commands/rand'
 
@@ -25,7 +25,7 @@ client.once("ready", () => {
     }
 });
 
-/*
+
 // !timeと入力したときに現在時刻を返す
 client.on('messageCreate', async (message: Message) => {
     if (message.author.bot) return;
@@ -34,8 +34,8 @@ client.on('messageCreate', async (message: Message) => {
         message.channel.send(date1.toLocaleString());
     }
 });
-*/
 
+// スラッシュコマンド'rand' (まだ動かない)
 client.on('randnumber', async (interaction: CommandInteraction) => {
     if (!interaction.isCommand()) {
         return;
