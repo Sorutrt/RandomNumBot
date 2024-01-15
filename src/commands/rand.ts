@@ -1,9 +1,10 @@
-import { CommandInteraction, SlashCommandBuilder} from "discord.js";
+import { CommandInteraction, SlashCommandBuilder } from "discord.js";
 
-export const data = new SlashCommandBuilder()
-	.setName('rand')
-	.setDescription('乱数を返します');
-
-export async function execute(interaction) {
-	await interaction.reply('random number');
-}
+module.exports = {
+	data: new SlashCommandBuilder()
+		.setName('rand')
+		.setDescription('Replies Random Number'),
+	async execute(interaction: CommandInteraction) {
+		await interaction.reply('random num');
+	},
+};
