@@ -1,6 +1,6 @@
 import { GatewayIntentBits, Client, Partials, CommandInteraction, Message } from "discord.js";
 import dotenv from "dotenv";
-import { execute } from './commands/rand'
+import { data, rand } from './commands/rand'
 
 
 dotenv.config(); //.envファイルを読み込む
@@ -42,8 +42,13 @@ client.on('randnumber', async (interaction: CommandInteraction) => {
     }
     const { commandName } = interaction;
 
-    if (commandName === 'rand') {
-        await execute(interaction);
+    if (commandName === data.name) {
+        try {
+            await rand(interaction);
+        }
+        catch(e) {
+            console.error(e);
+        }
     }
 })
 

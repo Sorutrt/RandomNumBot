@@ -4,6 +4,11 @@ export const data = new SlashCommandBuilder()
 	.setName('rand')
 	.setDescription('乱数を返します');
 
-export async function execute(interaction: CommandInteraction) {
-	await interaction.reply('random number');
+export async function rand(interaction: CommandInteraction) {
+	try {
+		await interaction.reply('random number');
+	}
+	catch (e) {
+		console.log(e);
+	}
 }
