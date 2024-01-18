@@ -37,7 +37,7 @@ client.on('messageCreate', async (message: Message) => {
 
 // スラッシュコマンド'rand' (まだ動かない)
 client.on(Events.InteractionCreate, async (interaction: Interaction<CacheType>) => {
-    console.log(interaction); //test code
+    //console.log(interaction); //test code
     
     if (!interaction.isCommand()) {
         return;
