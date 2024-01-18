@@ -1,4 +1,4 @@
-import { GatewayIntentBits, Client, Partials, CommandInteraction, Message } from "discord.js";
+import { GatewayIntentBits, Client, Partials, Interaction, Message, Events, CacheType } from "discord.js";
 import dotenv from "dotenv";
 import { data, rand } from './commands/rand'
 
@@ -36,7 +36,9 @@ client.on('messageCreate', async (message: Message) => {
 });
 
 // スラッシュコマンド'rand' (まだ動かない)
-client.on('randnumber', async (interaction: CommandInteraction) => {
+client.on(Events.InteractionCreate, async (interaction: Interaction<CacheType>) => {
+    console.log(interaction); //test code
+    
     if (!interaction.isCommand()) {
         return;
     }
