@@ -12,4 +12,6 @@
 .env file
 ```
 TOKEN = "ここにトークンを入力"
+CLIENT_ID = "clientid"
+GUILD_ID = "guildid"
 ```
