@@ -1,4 +1,4 @@
-import { GatewayIntentBits, Client, Partials, Interaction, Message, Events, CacheType } from "discord.js";
+import { GatewayIntentBits, Client, Partials, Interaction, Events, CacheType } from "discord.js";
 import dotenv from "dotenv";
 import { data, rand } from './commands/rand'
 
