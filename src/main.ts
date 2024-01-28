@@ -25,16 +25,6 @@ client.once("ready", () => {
     }
 });
 
-
-// !timeと入力したときに現在時刻を返す
-client.on('messageCreate', async (message: Message) => {
-    if (message.author.bot) return;
-    if (message.content == "!time") {
-        const date1 = new Date();
-        message.channel.send(date1.toLocaleString());
-    }
-});
-
 // スラッシュコマンド'rand' (まだ動かない)
 client.on(Events.InteractionCreate, async (interaction: Interaction<CacheType>) => {
     //console.log(interaction); //test code
@@ -49,6 +39,7 @@ client.on(Events.InteractionCreate, async (interaction: Interaction<CacheType>) 
             await rand(interaction);
         }
         catch(e) {
+            console.log('main.ts error')
             console.error(e);
         }
     }
